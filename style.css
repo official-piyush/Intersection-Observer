@@ -1,0 +1,140 @@
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin: 0 0.6em;
+}
+
+a {
+    text-decoration: none;
+    color: skyblue;
+    letter-spacing: 1.5px;
+}
+
+img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    padding: 1.5em 2em;
+    position: fixed;
+    width: 100%;
+    transition: background-color 0.3s;
+    z-index: 10000;
+}
+
+.nav-changed {
+    background: #474747; 
+    box-shadow: 0 3px 10px #888888 ;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.side-link {
+    color: white;
+}
+
+.hero {
+    min-height: 100vh;
+    background: url('./butterfly.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.product-section-container {
+    background: rgb(240, 240, 240);
+    padding: 3em 0;
+}
+
+.product-section {
+    /* border: 1px solid rgb(173, 173, 173); */
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color:rgb(73, 73, 73)
+}
+
+.cards {
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    max-width: 90%;
+    margin: 4em auto;
+}
+
+
+.card {
+    border: 1px solid rgb(165, 165, 165);
+    width: 250px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: white;
+    opacity: 0;
+    transition: opacity 900ms ease-in-out;
+}
+
+.card.show-element {
+    opacity: 1;
+}
+
+.product-text {
+    color: rgb(65, 65, 65);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.art {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
+    grid-gap: 2em;
+    align-items: center;
+    padding: 4em 0;
+}
+
+.art p {
+    line-height: 1.5em;
+    color:rgb(65, 65, 65);
+    text-align: justify;
+}
+
+.from-left {
+    grid-column: 2/3;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 900ms, opacity 900ms;
+}
+
+.from-right {
+    grid-column: 3/4;
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform 900ms, opacity 900ms;
+}
+
+.from-left.show-element,
+.from-right.show-element {
+    transform: translateX(0);
+    opacity: 1;
+}
